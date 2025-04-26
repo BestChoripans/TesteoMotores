@@ -1,7 +1,8 @@
 #include "variable.h"
 
 void motorSetup(){
-  // seteo motores pines
+  // aqui se hace la configuracion de los pines 
+  // para el uso de los motores
   pinMode(BIN2  , OUTPUT);
   pinMode(BIN1  , OUTPUT);
   ledcSetup(1, freq, resolution);
@@ -12,7 +13,7 @@ void motorSetup(){
   ledcAttachPin(PWMA, 0);
 }
 
-// accionamiento motor izquierdo
+// Funcion accionamiento motor izquierdo
 void Motoriz(int value) {
   if ( value >= 0 ) {
     digitalWrite(BIN1, LOW);
@@ -24,6 +25,7 @@ void Motoriz(int value) {
   }
   ledcWrite(0, value);
 }
+
 // Función accionamiento motor derecho
 void Motorde(int value) {
   if ( value >= 0 ) {
@@ -37,7 +39,7 @@ void Motorde(int value) {
   ledcWrite(1, value);
 }
 
-// accionamiento motor entero
+// Funcion para el accionamiento de ambos motores
 void motores(int velizq, int velder){
   Motoriz(velizq);
   Motorde(velder);
