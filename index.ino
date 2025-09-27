@@ -8,4 +8,8 @@ void setup() {
 
 void loop() {
   motores(100, 100); // codigo para el movimiento de los motores
+  delay(500);
+  motores(0,50);
+  delay(500);
+  motores(50,0);
 }
