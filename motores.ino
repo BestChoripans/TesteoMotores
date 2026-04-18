@@ -28,6 +28,6 @@ void Motorde(int value) {
 
 // Funcion para el accionamiento de ambos motores
 void motores(int velizq, int velder){
-  Motoriz(velizq);
+  Motoriz(-velizq);
   Motorde(velder);
 }
